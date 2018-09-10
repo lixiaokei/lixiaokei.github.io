@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="人生苦短，我用Python！">
+<meta name="description" content="排序算法 排序算法  衡量一个算法的好坏有两个指标 渐近时间复杂度 渐近空间复杂度   简单排序算法 - 简单选择排序、简单插入排序、冒泡排序 - O(n ** 2) 高级排序算法 - 快速排序、归并排序 - O(n * log2 n)   简单排序 - 冒泡排序为例  循环的比较相邻的两个元素的值, 每次循环都能找出一个当前列表的最大值，下一次循环就不再比较，直至没有可以循环  12345678">
 <meta name="keywords" content="排序,算法,冒泡排序,归并排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用排序算法及优化">
 <meta property="og:url" content="http://yoursite.com/2018/09/07/常用排序算法以及优化/index.html">
 <meta property="og:site_name" content="LiXiaoKei">
-<meta property="og:description" content="人生苦短，我用Python！">
+<meta property="og:description" content="排序算法 排序算法  衡量一个算法的好坏有两个指标 渐近时间复杂度 渐近空间复杂度   简单排序算法 - 简单选择排序、简单插入排序、冒泡排序 - O(n ** 2) 高级排序算法 - 快速排序、归并排序 - O(n * log2 n)   简单排序 - 冒泡排序为例  循环的比较相邻的两个元素的值, 每次循环都能找出一个当前列表的最大值，下一次循环就不再比较，直至没有可以循环  12345678">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-10T12:28:59.845Z">
+<meta property="og:updated_time" content="2018-09-10T14:45:41.466Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用排序算法及优化">
-<meta name="twitter:description" content="人生苦短，我用Python！">
+<meta name="twitter:description" content="排序算法 排序算法  衡量一个算法的好坏有两个指标 渐近时间复杂度 渐近空间复杂度   简单排序算法 - 简单选择排序、简单插入排序、冒泡排序 - O(n ** 2) 高级排序算法 - 快速排序、归并排序 - O(n * log2 n)   简单排序 - 冒泡排序为例  循环的比较相邻的两个元素的值, 每次循环都能找出一个当前列表的最大值，下一次循环就不再比较，直至没有可以循环  12345678">
 
 
 
@@ -350,7 +350,66 @@
       
 
       
-        
+        <h4 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h4><ul>
+<li><p>排序算法</p>
+<ul>
+<li>衡量一个算法的好坏有两个指标<ul>
+<li>渐近时间复杂度</li>
+<li>渐近空间复杂度</li>
+</ul>
+</li>
+<li>简单排序算法 - 简单选择排序、简单插入排序、冒泡排序 - O(n ** 2)</li>
+<li>高级排序算法 - 快速排序、归并排序 - O(n * log2 n)</li>
+</ul>
+</li>
+<li><p>简单排序 - 冒泡排序为例</p>
+<ul>
+<li>循环的比较相邻的两个元素的值, 每次循环都能找出一个当前列表的最大值，下一次循环就不再比较，直至没有可以循环</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">原数组 ： 68, 34, 12, 95, 73, 80, 57</span><br><span class="line">开始排序：</span><br><span class="line">第一次： 34, 12, 68, 73, 80, 57, 95</span><br><span class="line">第二次： 12, 34, 68, 73, 57, 80</span><br><span class="line">第三次： 12, 34, 68, 57, 73</span><br><span class="line">第四次： 12, 34, 57, 68</span><br><span class="line">第五次： 12, 34, 57</span><br><span class="line">第六次:  12, 34</span><br><span class="line">结果： 12， 34， 57， 68， 73， 80， 95</span><br></pre></td></tr></table></figure>
+<p>Python代码实现</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(unsorted_items)</span>:</span></span><br><span class="line">    <span class="string">"""基本冒泡排序"""</span></span><br><span class="line">    items = unsorted_items[:]</span><br><span class="line">    items_len = len(items)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(items_len - <span class="number">1</span>):</span><br><span class="line">    	<span class="keyword">for</span> j <span class="keyword">in</span> range(items_len - <span class="number">1</span> - i):</span><br><span class="line">			<span class="keyword">if</span> items[j] &gt; items[j+<span class="number">1</span>]:</span><br><span class="line">                items[j], items[j+<span class="number">1</span>] = items[j+<span class="number">1</span>], items[j]</span><br><span class="line">    <span class="keyword">return</span> items</span><br></pre></td></tr></table></figure>
+<p>以上就是一个基本的冒泡排序方法的实现</p>
+<hr>
+<p>但是如果出现以下这种极端情况</p>
+<p>数组是 [9, 1, 2, 3, 4, 5, 6, 7, 8]或者[2,3,4,5,6,7,8,9,1]</p>
+<p>以上排序代码就有许多无效循环</p>
+<p>优化如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(unsorted_items)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    冒泡排序</span></span><br><span class="line"><span class="string">        升级为搅拌排序，使用func 作为比较规则。解耦合</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    items = unsorted_items[:]</span><br><span class="line">    items_len = len(items)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(items_len - <span class="number">1</span>):</span><br><span class="line">        flag = <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(items_len - <span class="number">1</span> - i):</span><br><span class="line">            <span class="keyword">if</span> items[j] &gt; items[j + <span class="number">1</span>]:</span><br><span class="line">                items[j], items[j + <span class="number">1</span>] = items[j + <span class="number">1</span>], items[j]</span><br><span class="line">                flag = <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">if</span> flag:</span><br><span class="line">            flag = <span class="keyword">False</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(items_len - <span class="number">2</span> - i, <span class="number">0</span>, <span class="number">-1</span>):</span><br><span class="line">                <span class="keyword">if</span> items[j - <span class="number">1</span>] &gt; items[j]:</span><br><span class="line">                    items[j], items[j - <span class="number">1</span>] = items[j - <span class="number">1</span>], items[j]</span><br><span class="line">                    flag = <span class="keyword">True</span>            </span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> flag:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> items</span><br></pre></td></tr></table></figure>
+<p>使用flag标志位，判定是否有出现位置调换，当无位置调换则表明已经排好了</p>
+<p>先来一次正序再来一次反序，就可以完美的解决上述极端问题，达到优化性能的算法</p>
+<hr>
+<p>上述代码还是有问题的，当遇见类的实例化对象后就无法完成排序</p>
+<p>此时就需要制定比较规则，代码如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(unsorted_items, *, comp=lambda x, y: x &gt; y)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    冒泡排序， 最后优化版</span></span><br><span class="line"><span class="string">    	定义一个comp比较规则，用lambda函数定义</span></span><br><span class="line"><span class="string">    	如果不符合，可根据关键词参数传入指定规则，当传入类的对象后</span></span><br><span class="line"><span class="string">    	可指定比较规则，即可完成排序</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    items = unsorted_items[:]</span><br><span class="line">    items_len = len(items)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(items_len - <span class="number">1</span>):</span><br><span class="line">        swapped = <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(items_len - <span class="number">1</span> - i):</span><br><span class="line">            <span class="keyword">if</span> comp(items[j], items[j + <span class="number">1</span>]):</span><br><span class="line">                items[j], items[j + <span class="number">1</span>] = items[j + <span class="number">1</span>], items[j]</span><br><span class="line">                swapped = <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">if</span> swapped:</span><br><span class="line">            swapped = <span class="keyword">False</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(items_len - <span class="number">2</span> - i, <span class="number">0</span>, <span class="number">-1</span>):</span><br><span class="line">                <span class="keyword">if</span> comp(items[j - <span class="number">1</span>], items[j]):</span><br><span class="line">                    items[j], items[j - <span class="number">1</span>] = items[j - <span class="number">1</span>], items[j]</span><br><span class="line">                    swapped = <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> swapped:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> items</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>高级排序</p>
+<ul>
+<li><p>一、归并排序 – 分治法</p>
+<ul>
+<li>将规模较大的问题划分为规模较小的子问题 用子问题解合并出原问题的解</li>
+</ul>
+</li>
+<li><p>解决思路</p>
+<ul>
+<li>将列表拆成一个一个只有一个元素的列表，此时这种列表就是有序的</li>
+<li>再将其两两合并，同时保持有序状态</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(list1, list2, *, comp=lambda x, y: x &lt; y)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    列表合并方法</span></span><br><span class="line"><span class="string">    将两个有序列表合并，合并之后仍然有序</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    list3 = []</span><br><span class="line">    index1, index2 = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> index1 &lt; len(list1) <span class="keyword">and</span> index2 &lt; len(list2):</span><br><span class="line">        <span class="keyword">if</span> comp(list1[index1], list2[index2]):</span><br><span class="line">            list3.append(list1[index1])</span><br><span class="line">            index1 += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            list3.append(list2[index2])</span><br><span class="line">            index2 += <span class="number">1</span></span><br><span class="line">    list3 += list1[index1:]</span><br><span class="line">    list3 += list2[index2:]</span><br><span class="line">    <span class="keyword">return</span> list3</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span><span class="params">(unsorted_items, *, comp=lambda x, y: x &lt; y)</span>:</span></span><br><span class="line">	<span class="string">"""拆分排序方法"""</span></span><br><span class="line">    <span class="keyword">if</span> len(unsorted_items) &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> unsorted_items[:]</span><br><span class="line">    mid = len(unsorted_items) // <span class="number">2</span></span><br><span class="line">    left = merge_sort(unsorted_items[:mid], comp=comp)</span><br><span class="line">    right = merge_sort(unsorted_items[mid:], comp=comp)</span><br><span class="line">    <span class="keyword">return</span> merge(left, right, comp=comp)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>快速排序法</p>
+<ul>
+<li><p>从数组中取出一个数作为基准，将剩下的元素分为两部分，然后将所有小于它的数都放到它前面，所有大于它的数都放到它后面，这个过程称为一趟快速排序</p>
+</li>
+<li><p>然后将大于它的，和小于他的，重复第一步，直到大于和小于的列表都只有一个元素，即排完了，最后在全部组合起来</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">data_sort</span><span class="params">(data)</span>:</span></span><br><span class="line">	_max = []</span><br><span class="line">	_less = []</span><br><span class="line">    <span class="comment"># 退出递归的临界条件</span></span><br><span class="line">	<span class="keyword">if</span> len(data) &lt;= <span class="number">1</span>:</span><br><span class="line">		<span class="keyword">return</span> data</span><br><span class="line">    <span class="comment"># 取最后一个数最为基准</span></span><br><span class="line">	mid = data.pop()</span><br><span class="line">	<span class="keyword">for</span> x <span class="keyword">in</span> data:</span><br><span class="line">		<span class="keyword">if</span> x &gt;= mid:</span><br><span class="line">			_max.append(x)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			_less.append(x)</span><br><span class="line">	<span class="comment"># 递归实现重复</span></span><br><span class="line">	<span class="keyword">return</span> data_sort(_max) + [mid] + data_sort(_less)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
     
@@ -446,8 +505,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -521,6 +589,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#排序算法"><span class="nav-number">1.</span> <span class="nav-text">排序算法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
