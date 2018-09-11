@@ -116,7 +116,7 @@
 
 
 
-  <meta name="keywords" content="Django,类视图， 笔记," />
+  <meta name="keywords" content="Python,代码规范," />
 
 
 
@@ -129,18 +129,18 @@
 
 
 
-<meta name="description" content="类视图笔记 ListView举例 12345678910111213141516171819202122232425262728293031from blog.models import Articlefrom blog.models import Categoryfrom django.views.generic import ListViewimport markdown2class Inde">
-<meta name="keywords" content="Django,类视图， 笔记">
+<meta name="description" content="PEP 8风格指南PEP是Python Enhancement Proposal的缩写，通常翻译为“Python增强提案”。每个PEP都是一份为Python社区提供的指导Python往更好的方向发展的技术文档，其中的第8号增强提案（PEP 8）是针对Python语言编订的代码风格指南。尽管我们可以在保证语法没有问题的前提下随意书写Python代码，但是在实际开发中，采用一致的风格书写出可读性强的代">
+<meta name="keywords" content="Python,代码规范">
 <meta property="og:type" content="article">
-<meta property="og:title" content="类视图">
-<meta property="og:url" content="http://yoursite.com/2018/09/06/django类视图/index.html">
+<meta property="og:title" content="PEP 8风格指南">
+<meta property="og:url" content="http://yoursite.com/2018/08/23/PEP 8风格指南/index.html">
 <meta property="og:site_name" content="LiXiaoKei">
-<meta property="og:description" content="类视图笔记 ListView举例 12345678910111213141516171819202122232425262728293031from blog.models import Articlefrom blog.models import Categoryfrom django.views.generic import ListViewimport markdown2class Inde">
+<meta property="og:description" content="PEP 8风格指南PEP是Python Enhancement Proposal的缩写，通常翻译为“Python增强提案”。每个PEP都是一份为Python社区提供的指导Python往更好的方向发展的技术文档，其中的第8号增强提案（PEP 8）是针对Python语言编订的代码风格指南。尽管我们可以在保证语法没有问题的前提下随意书写Python代码，但是在实际开发中，采用一致的风格书写出可读性强的代">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-10T16:31:53.158Z">
+<meta property="og:updated_time" content="2018-09-11T14:52:30.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="类视图">
-<meta name="twitter:description" content="类视图笔记 ListView举例 12345678910111213141516171819202122232425262728293031from blog.models import Articlefrom blog.models import Categoryfrom django.views.generic import ListViewimport markdown2class Inde">
+<meta name="twitter:title" content="PEP 8风格指南">
+<meta name="twitter:description" content="PEP 8风格指南PEP是Python Enhancement Proposal的缩写，通常翻译为“Python增强提案”。每个PEP都是一份为Python社区提供的指导Python往更好的方向发展的技术文档，其中的第8号增强提案（PEP 8）是针对Python语言编订的代码风格指南。尽管我们可以在保证语法没有问题的前提下随意书写Python代码，但是在实际开发中，采用一致的风格书写出可读性强的代">
 
 
 
@@ -170,13 +170,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/06/django类视图/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/23/PEP 8风格指南/"/>
 
 
 
 
 
-  <title>类视图 | LiXiaoKei</title>
+  <title>PEP 8风格指南 | LiXiaoKei</title>
   
 
 
@@ -311,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/06/django类视图/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/23/PEP 8风格指南/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李晓锴">
@@ -328,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">类视图</h1>
+          <h1 class="post-title" itemprop="name headline">PEP 8风格指南</h1>
         
 
         <div class="post-meta">
@@ -340,8 +340,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-06T16:10:14+08:00">
-                2018-09-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-23T18:10:14+08:00">
+                2018-08-23
               </time>
             
 
@@ -363,8 +363,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Django/" itemprop="url" rel="index">
-                    <span itemprop="name">Django</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  514
+                  1.2k
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  4
                 </span>
               
             </div>
@@ -436,18 +436,34 @@
       
 
       
-        <h3 id="类视图笔记"><a href="#类视图笔记" class="headerlink" title="类视图笔记"></a>类视图笔记</h3><hr>
-<h4 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h4><p><strong>举例</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> blog.models <span class="keyword">import</span> Article</span><br><span class="line"><span class="keyword">from</span> blog.models <span class="keyword">import</span> Category</span><br><span class="line"><span class="keyword">from</span> django.views.generic <span class="keyword">import</span> ListView</span><br><span class="line"><span class="keyword">import</span> markdown2</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexView</span><span class="params">(ListView)</span>:</span> </span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    首页视图,继承自ListVIew，用于展示从数据库中获取的文章列表</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    template_name = <span class="string">"blog/index.html"</span></span><br><span class="line">    <span class="comment"># template_name属性用于指定使用哪个模板进行渲染</span></span><br><span class="line"></span><br><span class="line">    context_object_name = <span class="string">"article_list"</span></span><br><span class="line">    <span class="comment"># context_object_name属性用于给上下文变量取名（在模板中使用该名字）</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_queryset</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        过滤数据，获取所有已发布文章，并且将内容转成markdown形式</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        article_list = Article.objects.filter(status=<span class="string">'p'</span>)</span><br><span class="line">        <span class="comment"># 获取数据库中的所有已发布的文章，即filter(过滤)状态为'p'(已发布)的文章。</span></span><br><span class="line">        <span class="keyword">for</span> article <span class="keyword">in</span> article_list:</span><br><span class="line">            article.body = markdown2.markdown(article.body, )</span><br><span class="line">            <span class="comment"># 将markdown标记的文本转为html文本</span></span><br><span class="line">        <span class="keyword">return</span> article_list</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_context_data</span><span class="params">(self, **kwargs)</span>:</span></span><br><span class="line">        <span class="comment"># 增加额外的数据，这里返回一个文章分类，以字典的形式</span></span><br><span class="line">        kwargs[<span class="string">'category_list'</span>] = Category.objects.all().order_by(<span class="string">'name'</span>)</span><br><span class="line">        <span class="keyword">return</span> super(IndexView, self).get_context_data(**kwargs)</span><br></pre></td></tr></table></figure>
-<p><strong>使用分页</strong> – 需要多继承几个类属性</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> django.http.response <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.views.generic <span class="keyword">import</span>  View, ListView</span><br><span class="line"><span class="comment">#model</span></span><br><span class="line"><span class="keyword">from</span> models <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#python</span></span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">ListView只需要传好变量即可使用：</span></span><br><span class="line"><span class="string">context_object_name是数据库搜索出来的结果存放的变量名字，用于模板循环显示</span></span><br><span class="line"><span class="string">template_name加载该html文件</span></span><br><span class="line"><span class="string">paginate_by设置分页中每一页的记录数目</span></span><br><span class="line"><span class="string">model定义从哪份model中查询</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ServerListIndex</span><span class="params">(ListView)</span>:</span></span><br><span class="line">    context_object_name = <span class="string">'serverlist'</span></span><br><span class="line">    template_name = <span class="string">'serverlist.jinja.html'</span></span><br><span class="line">    paginate_by = <span class="number">50</span></span><br><span class="line">    model = ServerList</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>分页调用方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">page_obj是分页对像实例，这个名字是ListView默认生成的</span><br><span class="line">page_obj的变量：</span><br><span class="line">page_obj.paginator.page_range：所有分页的number，是一个list</span><br><span class="line">page_obj.number：当前分页的页码</span><br><span class="line">page_obj.paginator.num_pages：总分页数，就是一共有多少页</span><br><span class="line"></span><br><span class="line">page_obj的方法：</span><br><span class="line">page_obj.has_previous()：判断是否有上一页</span><br><span class="line">page_obj.previous_page_number()：返回上一页的number</span><br><span class="line">page_obj.has_next()：判断是否有下一页</span><br><span class="line">page_obj.next_page_number()：返回下一页的number</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>如果需要对出来的列表做限制，比如显示查询结果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">就需要重写重写了get_queryset方法，达到利用get参数自定义SQL的作用</span><br><span class="line"></span><br><span class="line">重新get_context_data方法，相当于return render_to_response(xxx.html,&#123;&#125;,context_instance=RequestContext(request))中的&#123;&#125;的内容，就是传给模板的变量</span><br></pre></td></tr></table></figure>
+        <h2 id="PEP-8风格指南"><a href="#PEP-8风格指南" class="headerlink" title="PEP 8风格指南"></a>PEP 8风格指南</h2><p>PEP是Python Enhancement Proposal的缩写，通常翻译为“Python增强提案”。每个PEP都是一份为Python社区提供的指导Python往更好的方向发展的技术文档，其中的第8号增强提案（PEP 8）是针对Python语言编订的代码风格指南。尽管我们可以在保证语法没有问题的前提下随意书写Python代码，但是在实际开发中，采用一致的风格书写出可读性强的代码是每个专业的程序员应该做到的事情，也是每个公司的编程规范中会提出的要求，这些在多人协作开发一个项目（团队开发）的时候显得尤为重要。我们可以从Python官方网站的<a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="noopener">PEP 8链接</a>中找到该文档，下面我们对该文档的关键部分做一个简单的总结。</p>
+<h3 id="空格的使用"><a href="#空格的使用" class="headerlink" title="空格的使用"></a>空格的使用</h3><ol>
+<li><u>使用空格来表示缩进而不要用制表符（Tab）。</u>这一点对习惯了其他编程语言的人来说会觉得不可理喻，因为绝大多数程序员都用Tab来表示缩进，但是要知道Python并没有像C/C++或Java那样的用花括号来构造一个代码块的语法，在Python中分支和循环结构都使用缩进来表示哪些代码属于哪一个层级，鉴于此Python代码对缩进以及缩进宽度的依赖比其他很多语言都强得多。在不同的编辑器中，Tab的宽度可能是2个、4个或8个字符，甚至是其他更离谱的值，用Tab来表示缩进对Python代码来说并不可取。</li>
+<li><u>和语法相关的每一层缩进都用4个空格来表示。</u></li>
+<li><u>每行的字符数不要超过79个字符，如果表达式因太长而占据了多行，除了首行之外的其余各行都应该在正常的缩进宽度上再加上4个空格。</u></li>
+<li><u>函数和类的定义，代码前后都要用两个空行进行分隔。</u></li>
+<li><u>在同一个类中，各个方法之间应该用一个空行进行分隔。</u></li>
+<li><u>二元运算符的左右两侧应该保留一个空格，而且只要一个空格就好。</u></li>
+</ol>
+<h3 id="标识符命名"><a href="#标识符命名" class="headerlink" title="标识符命名"></a>标识符命名</h3><p>PEP 8倡导用不同的命名风格来命名Python中不同的标识符，以便在阅读代码时能够通过标识符的名称来确定该标识符在Python中扮演了怎样的角色（在这一点上，Python自己的内置模块以及某些第三方模块都做得并不是很好）。</p>
+<ol>
+<li><u>变量、函数和属性应该使用小写字母来拼写，如果有多个单词就使用下划线进行连接。</u></li>
+<li><u>类中受保护的实例属性，应该以一个下划线开头。</u></li>
+<li><u>类中私有的实例属性，应该以两个下划线开头。</u></li>
+<li><u>类和异常的命名，应该每个单词首字母大写。</u></li>
+<li><u>模块级别的常量，应该采用全大写字母，如果有多个单词就用下划线进行连接。</u></li>
+<li><u>类的实例方法，应该把第一个参数命名为<code>self</code>以表示对象自身。</u></li>
+<li><u>类的类方法，应该把第一个参数命名为<code>cls</code>以表示该类自身。</u></li>
+</ol>
+<h3 id="表达式和语句"><a href="#表达式和语句" class="headerlink" title="表达式和语句"></a>表达式和语句</h3><p>在Python之禅（可以使用<code>import this</code>查看）中有这么一句名言：“There should be one– and preferably only one –obvious way to do it.”，翻译成中文是“做一件事应该有而且最好只有一种确切的做法”，这句话传达的思想在PEP 8中也是无处不在的。</p>
+<ol>
+<li><u>采用内联形式的否定词，而不要把否定词放在整个表达式的前面。</u>例如<code>if a is not b</code>就比<code>if not a is b</code>更容易让人理解。</li>
+<li><u>不要用检查长度的方式来判断字符串、列表等是否为<code>None</code>或者没有元素</u>，应该用<code>if not x</code>这样的写法来检查它。</li>
+<li><u>就算<code>if</code>分支、<code>for</code>循环、<code>except</code>异常捕获等中只有一行代码，也不要将代码和<code>if</code>、<code>for</code>、<code>except</code>等写在一起，分开写才会让代码更清晰。</u></li>
+<li><u><code>import</code>语句总是放在文件开头的地方。</u></li>
+<li><u>引入模块的时候，<code>from math import sqrt</code>比<code>import math</code>更好。</u></li>
+<li><u>如果有多个<code>import</code>语句，应该将其分为三部分，从上到下分别是Python标准模块、第三方模块和自定义模块，每个部分内部应该按照模块名称的字母表顺序来排列。</u></li>
+</ol>
 
       
     </div>
@@ -473,9 +489,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Django/" rel="tag"># Django</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
-            <a href="/tags/类视图，-笔记/" rel="tag"># 类视图， 笔记</a>
+            <a href="/tags/代码规范/" rel="tag"># 代码规范</a>
           
         </div>
       
@@ -488,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/05/django 笔记/" rel="next" title="Django笔记">
-                <i class="fa fa-chevron-left"></i> Django笔记
+              <a href="/2018/08/17/Python惯例-如何编写Pythonic的代码/" rel="next" title="Python惯例">
+                <i class="fa fa-chevron-left"></i> Python惯例
               </a>
             
           </div>
@@ -498,8 +514,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/07/常用排序算法以及优化/" rel="prev" title="常用排序算法及优化">
-                常用排序算法及优化 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/03/玩转Linux/" rel="prev" title="玩转Linux操作系统">
+                玩转Linux操作系统 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -653,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#类视图笔记"><span class="nav-text">类视图笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ListView"><span class="nav-text">ListView</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PEP-8风格指南"><span class="nav-text">PEP 8风格指南</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#空格的使用"><span class="nav-text">空格的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标识符命名"><span class="nav-text">标识符命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表达式和语句"><span class="nav-text">表达式和语句</span></a></li></ol></li></ol></div>
             
 
           </div>
